@@ -1,0 +1,25 @@
+.advantage-section{
+    background-color: #F8F4DA;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.ad-text{
+    color: #929284;
+}
+
+.icons{
+    color: orange;
+    font-size: 50px;
+}
+.card-hover:hover{
+    background-color: #FFCD00;
+    
+}
+.card-hover:hover .icons{
+    color: #ffffff;
+}
+
+.card-hover:hover .ad-text{
+    color: #ffffff;
+}

@@ -1,0 +1,22 @@
+
+.place-order{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap:30px ;
+}
+.place-order .place-order-form{
+        background-color: honeydew;
+    }
+.place-order input{
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px){
+    .place-order{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .place-order .place-order-form{
+        margin-top: 60px;
+        background-color: honeydew;
+    }
+}
