@@ -2,21 +2,31 @@ import { Container, Grid, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../../redux/slices/poductSlice'
+
 
 
 
 
 const Products = () => {
 
-    const [products, setProducts] = useState([]);
+    // const [products, setProducts] = useState([]);
+
+    // useEffect(() => {
+    //     fetch('https://blooming-oasis-58661.herokuapp.com/products')
+    //         .then(res => res.json())
+    //         .then(data => setProducts(data))
+    // }, [])
+
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        fetch('https://blooming-oasis-58661.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
+        dispatch(fetchProducts());
     }, [])
 
 
+    const products = useSelector((state) => state.products.allProducts)
 
 
 

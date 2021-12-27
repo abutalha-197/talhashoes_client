@@ -4,19 +4,22 @@ import React, { useEffect, useState } from 'react';
 import Explore from '../Explore/Explore';
 import Navigation from '../../Shared/Navigation/Navigation';
 import Footer from '../../Shared/Footer/Footer';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../../../redux/slices/poductSlice'
 
 
 
 
 const Explores = () => {
 
-    const [products, setProducts] = useState([]);
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        fetch('https://blooming-oasis-58661.herokuapp.com/products')
-            .then(res => res.json())
-            .then(data => setProducts(data))
+        dispatch(fetchProducts());
     }, [])
+
+
+    const products = useSelector((state) => state.products.allProducts)
 
 
 

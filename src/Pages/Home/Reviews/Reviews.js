@@ -4,19 +4,29 @@ import Grid from '@mui/material/Grid';
 import { Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Review from '../Review/Review';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchReviews } from '../../../redux/slices/poductSlice'
+
 
 
 
 
 const Reviews = () => {
-    const [reviews, setReviews] = useState([]);
+    // const [reviews, setReviews] = useState([]);
+
+    // useEffect(() => {
+    //     fetch('https://blooming-oasis-58661.herokuapp.com/reviews')
+    //         .then(res => res.json())
+    //         .then(data => setReviews(data))
+    // }, [])
+    const dispatch = useDispatch()
 
     useEffect(() => {
-        fetch('https://blooming-oasis-58661.herokuapp.com/reviews')
-            .then(res => res.json())
-            .then(data => setReviews(data))
+        dispatch(fetchReviews());
     }, [])
 
+
+    const reviews = useSelector((state) => state.products.allReviews)
     return (
         <Box sx={{ flexGrow: 1 }} style={{ marginBottom: '30px' }}>
             <Container>

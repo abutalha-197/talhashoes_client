@@ -7,7 +7,7 @@ const Advantage = () => {
             <div className="text-center">
                 <p className="ad-text">120+ SHOES TYPE & BRANDS
                 </p>
-                <h2 className="fs-1 fw-bold">Shome Shoes <span>Advantages</span>
+                <h2 className="fs-1 fw-bold">Talha Shoes <span>Advantages</span>
                 </h2>
             </div>
             <div className="container mb-3">
